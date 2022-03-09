@@ -1,8 +1,9 @@
 import React from 'react';
+import axios from 'axios';
 import {useSelector, useDispatch} from 'react-redux';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 
-import {selectCity} from '../../actions';
+import { selectCity, updateWeather } from '../../actions';
 import cities from 'cities.json';
 
 
@@ -12,7 +13,6 @@ function CityFinder() {
     const handleOnSearch = (string, results) => {
         // onSearch will have as the first callback parameter
         // the string searched and for the second the results.
-        console.log(string, results);
     }
     
     const handleOnHover = (result) => {
@@ -23,6 +23,13 @@ function CityFinder() {
     const handleOnSelect = (city) => {
         // the item selected
         dispatch(selectCity(city));
+        const APIUrl = `http://api.weatherapi.com/v1/current.json?key=&q=${city.lat},${city.lng}&aqi=yes`;
+        
+        // Fetch weather data
+        // axios.get(APIUrl)
+        // .then((response) => {
+        //     dispatch(updateWeather(response.data));
+        // })
     }
     
     const handleOnFocus = () => {

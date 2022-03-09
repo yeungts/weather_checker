@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
+import thunk from 'redux-thunk';
 import allReducers from './reducers'
 import { Provider } from 'react-redux';
 
 const store = createStore(
   allReducers,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  applyMiddleware(thunk) &&
+  window.__REDUX_DEVTOOLS_EXTENSION__ && 
+  window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 //Display it in the console when something was done to the store
