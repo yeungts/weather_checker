@@ -1,9 +1,4 @@
-const cityReducer = (state = {
-  country: "",
-  name: "",
-  lat: "",
-  lng: ""
-}, action) => {
+const cityReducer = (state = {}, action) => {
     switch (action.type) {
       case "SELECT_CITY":
         return state = action.payload;

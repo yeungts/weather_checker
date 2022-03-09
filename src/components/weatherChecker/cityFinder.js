@@ -7,16 +7,7 @@ import cities from 'cities.json';
 
 
 function CityFinder() {
-
-    // Fetch needed data members from store
     const dispatch = useDispatch();
-
-    var selectedCity = {
-        country: "",
-        name: "",
-        lat: "",
-        lng: ""
-    }
   
     const handleOnSearch = (string, results) => {
         // onSearch will have as the first callback parameter
