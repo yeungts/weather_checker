@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 
+import { dataLoaded, updateLocation, updateCurrent, updateForcast } from '../../actions';
 import { selectCity } from '../../actions';
 import cities from 'cities.json';
 
@@ -22,12 +23,15 @@ function CityFinder() {
     const handleOnSelect = (city) => {
         // the item selected
         dispatch(selectCity(city));
-        const APIUrl = `http://api.weatherapi.com/v1/current.json?key=&q=${city.lat},${city.lng}&days=3&aqi=yes&alerts=yes`;
+        const APIUrl = `http://api.weatherapi.com/v1/forecast.json?key=&q=${city.lat},${city.lng}&days=3&aqi=yes&alerts=yes`;
         
         // Fetch weather data
         // axios.get(APIUrl)
         // .then((response) => {
-        //     dispatch(updateWeather(response.data));
+        //     dispatch(updateLocation(response.data.location));
+        //     dispatch(updateCurrent(response.data.current));
+        //     dispatch(updateForcast(response.data.forecast));
+        //     dispatch(dataLoaded());
         // })
     }
     
