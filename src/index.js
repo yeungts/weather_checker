@@ -16,7 +16,7 @@ const store = createStore(
 );
 
 //Display it in the console when something was done to the store
-store.subscribe(() => console.log(store.getState()));
+//store.subscribe(() => console.log(store.getState()));
 
 
 //<Provider></Provider> to enable the use of store in the whole app

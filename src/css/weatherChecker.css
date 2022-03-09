@@ -1,0 +1,99 @@
+.weather-app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.information-widgets {
+    display: flex;
+    padding: 10px;
+}
+
+.weather-display {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 20px;
+    background-color: rgba(58, 149, 190, 0.61);
+    border-radius: 25px;
+    box-shadow: 5px 5px 20px rgba(119, 119, 119, 0.651);
+}
+
+.city-name {
+    font-weight: bold;
+}
+
+.condition-group {
+    display: grid;
+    grid-template-areas:
+        'condition-icon temperature'
+        'condition-icon condition';
+    width: fit-content;
+}
+
+.condition-icon {
+    grid-area: condition-icon;
+}
+
+.temperature {
+    display: flex;
+    grid-area: temperature;
+    font-size: 24px;
+}
+
+.temperature span {
+    align-self: flex-end;
+}
+
+.condition-text {
+    display: flex;
+    grid-area: condition;
+}
+
+.condition-text span {
+    align-self: flex-start;
+}
+
+.weather-inner-widgets-wrapper {
+    display: flex;
+    text-align: center;
+    column-gap: 10px;
+}
+
+.weather-inner-widget {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-basis: 100%;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgba(119, 119, 119, 0.651);
+    min-width: 80px;
+}
+
+.weather-inner-widget div { 
+    padding: 4px 0;
+}
+
+.weather-inner-widget-title {
+    font-size: 12px;
+}
+
+.weather-inner-widght-content {
+    font-weight: bold;
+}
+
+.feels-like {
+    background-color: rgba(0, 0, 0, 0.795);
+    color: white;
+}
+
+.humidity {
+    background-color: rgba(241, 176, 78, 0.842);
+}
+
+.wind-speed {
+    background-color: rgba(255, 255, 255, 0.849);
+}

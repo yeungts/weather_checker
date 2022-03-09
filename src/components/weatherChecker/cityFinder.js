@@ -17,7 +17,6 @@ function CityFinder() {
     
     const handleOnHover = (result) => {
         // the item hovered
-        console.log(result);
     }
     
     const handleOnSelect = (city) => {
@@ -45,7 +44,7 @@ function CityFinder() {
 
     return (
         <div className="city-finder">
-            <div style={{ width: 400 }}>
+            <div style={{ width: 800 }}>
                 <ReactSearchAutocomplete
                     items={cities}
                     onSearch={handleOnSearch}
@@ -54,6 +53,7 @@ function CityFinder() {
                     onFocus={handleOnFocus}
                     autoFocus
                     formatResult={formatResult}
+                    placeholder={"Which city you feeling today?"}
                 />
             </div>
       </div>

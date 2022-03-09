@@ -3,13 +3,17 @@ import React from 'react';
 import CityFinder from './cityFinder';
 import WeatherDisplay from './weatherDisplay';
 
+import '../../css/weatherChecker.css'
+
 
 function WeatherChecker() {
 
     return (
-        <div className="WeatherChecker">
+        <div className="weather-app-container">
             <CityFinder />
-            <WeatherDisplay />
+            <div className='information-widgets'>
+                <WeatherDisplay />
+            </div>
         </div>
     );
 }

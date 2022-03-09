@@ -1,5 +1,3 @@
-import axios from "axios"
-
 // dispatch actions
 export const selectCity = (value) => {
     return {

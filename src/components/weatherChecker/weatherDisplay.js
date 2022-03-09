@@ -1,6 +1,7 @@
 import React from 'react';
 import { updateWeather } from '../../actions';
 import {useSelector, useDispatch} from 'react-redux';
+import WeatherChecker from '.';
 
 
 function WeatherDisplay() {
@@ -12,10 +13,29 @@ function WeatherDisplay() {
 
     return (
         <div className="weather-display">
-            <div>City: { city.name }, { weather.location.region }</div>
-            <div>Country: { weather.location.country }</div>
-            <div>Current Temp: { weather.current.temp_c }&deg;C / { weather.current.temp_f }&deg;F </div>
-            
+            <div>
+                <div className='city-name'>{ city.name },</div>
+                <div className='province-name'>{ weather.location.region }</div>
+            </div>
+            <div className='condition-group'>
+                <div className='condition-icon'><img src={ weather.current.condition.icon } /></div>
+                <div className='temperature'><span>{ weather.current.temp_c }&deg;C</span></div>
+                <div className='condition-text'><span>{ weather.current.condition.text }</span></div>
+            </div>
+            <div className='weather-inner-widgets-wrapper'>
+                <div className='feels-like weather-inner-widget'>
+                    <div className='weather-inner-widget-title'>Feels like:</div> 
+                    <div className='weather-inner-widght-content'>{ weather.current.feelslike_c }&deg;C</div>
+                </div>
+                <div className='humidity weather-inner-widget'>
+                    <div className='weather-inner-widget-title'>Humidity</div> 
+                    <div className='weather-inner-widght-content'>{ weather.current.humidity }%</div> 
+                </div>
+                <div className='wind-speed weather-inner-widget'>
+                    <div className='weather-inner-widget-title'>Wind speed</div> 
+                    <div className='weather-inner-widght-content'>{ weather.current.wind_kph } km/h</div> 
+                </div>
+            </div>
             
             <button onClick={() => dispatch(updateWeather({
                 "location": {
