@@ -1,10 +1,13 @@
 import { combineReducers } from 'redux';
 import cityReducer from './city';
-import weatherReducer from './weather';
+import { isDataPresentReducer, locationReducer, currentReducer, forecastReducer} from './weather';
 
 const allReducers = combineReducers({
     city: cityReducer,
-    weather: weatherReducer
+    isDataPresent: isDataPresentReducer,
+    returnedLocation: locationReducer,
+    currentWeather: currentReducer,
+    forecastWeather: forecastReducer
 })
 
 export default allReducers;

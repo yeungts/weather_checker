@@ -6,26 +6,41 @@
     max-width: 1000px;
 }
 
-.information-widgets {
+.widgets-wrapper {
     display: flex;
+    flex-wrap: wrap;
     padding: 10px;
+    row-gap: 20px;
+    column-gap: 20px;
 }
 
-.weather-display {
-    display: flex;
-    flex-direction: column;
+.widget {
     row-gap: 10px;
     padding: 20px;
-    background-color: rgba(58, 149, 190, 0.61);
     border-radius: 25px;
     box-shadow: 5px 5px 20px rgba(119, 119, 119, 0.651);
+    min-width: 290px;
 }
 
-.city-name {
-    font-weight: bold;
+/* Current weather widgets styling --------------------------------------- */
+.current-weather {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(58, 149, 190, 0.61);
+}
+
+.location-text {
+    color: #dfffff;
+    font-size: 24px;
+}
+
+.day-time {
+    font-size: 14px;
+    color: rgb(177, 177, 177);
 }
 
 .condition-group {
+    color: #dfffff;
     display: grid;
     grid-template-areas:
         'condition-icon temperature'
@@ -66,7 +81,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    flex-basis: 100%;
     padding: 5px;
     border-radius: 10px;
     box-shadow: 5px 5px 20px rgba(119, 119, 119, 0.651);
@@ -94,6 +108,55 @@
     background-color: rgba(241, 176, 78, 0.842);
 }
 
-.wind-speed {
+.visibility {
     background-color: rgba(255, 255, 255, 0.849);
+}
+/* Forecast widget ------------------------------------------------------- */
+
+.weather-forecast {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0px;
+    color: #dfffff;
+    background-color: rgba(106, 34, 173, 0.315);
+}
+
+.forecast-title {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.forecast-bar {
+    display: flex;
+    column-gap: 30px;
+}
+
+.forecast-bar-item {
+    display: flex;
+}
+
+.forecast-bar-item > div {
+    align-self: center;
+}
+
+.forecast-condition-icon {
+    max-width: 32px;
+    max-height: 32px;
+}
+
+.day-condition {
+    column-gap: 20px;
+}
+
+.day-condition > div {
+    min-width: 42px;
+}
+
+.low-high {
+    column-gap: 20px;
+}
+
+.low-high > div:first-child {
+    font-size: 14px;
+    color: rgb(133, 133, 133);
 }

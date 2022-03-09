@@ -6,9 +6,29 @@ export const selectCity = (value) => {
     }
 }
 
-export const updateWeather = (value) => {
+export const dataLoaded = () => {
     return {
-        type: 'UPDATE_WEATHER',
+        type: 'DATA_LOADED'
+    }
+}
+
+export const updateLocation = (value) => {
+    return {
+        type: 'UPDATE_LOCATION',
+        payload: value
+    }
+}
+
+export const updateCurrent = (value) => {
+    return {
+        type: 'UPDATE_CURRENT',
+        payload: value
+    }
+}
+
+export const updateForcast = (value) => {
+    return {
+        type: 'UPDATE_FORECAST',
         payload: value
     }
 }
