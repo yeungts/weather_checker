@@ -23,8 +23,10 @@ function CityFinder() {
     const handleOnSelect = (city) => {
         // the item selected
         dispatch(selectCity(city));
-        const APIUrl = `http://api.weatherapi.com/v1/forecast.json?key=API_KEY_HERE&q=${city.lat},${city.lng}&days=3&aqi=yes&alerts=yes`;
+        const APIUrl = `https://api.weatherapi.com/v1/forecast.json?key=API_KEY_HERE&q=${city.lat},${city.lng}&days=3&aqi=yes&alerts=yes`;
         
+        console.log(APIUrl);
+
         // Fetch weather data
         axios.get(APIUrl)
         .then((response) => {
@@ -32,7 +34,9 @@ function CityFinder() {
             dispatch(updateCurrent(response.data.current));
             dispatch(updateForcast(response.data.forecast));
             dispatch(dataLoaded());
-        })
+        }).catch((error) => {
+            console.log(error);
+        });
     }
     
     const handleOnFocus = () => {
