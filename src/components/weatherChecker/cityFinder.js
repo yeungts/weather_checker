@@ -52,7 +52,6 @@ function CityFinder() {
 
     return (
         <div className="city-finder">
-            <div style={{ width: 800 }}>
                 <ReactSearchAutocomplete
                     items={cities}
                     onSearch={handleOnSearch}
@@ -63,7 +62,6 @@ function CityFinder() {
                     formatResult={formatResult}
                     placeholder={"Which city you feeling today?"}
                 />
-            </div>
       </div>
     );
 }

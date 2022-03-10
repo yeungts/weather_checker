@@ -10,6 +10,8 @@ function WeatherDisplay() {
     const returnedLocation = useSelector(state => state.returnedLocation);
     const currentWeather = useSelector(state => state.currentWeather);
 
+    document.getElementById("favicon").setAttribute("href", currentWeather.condition.icon);
+
     let day = () => {
         if (currentWeather != null) {
             let days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday', 'Sunday'];
