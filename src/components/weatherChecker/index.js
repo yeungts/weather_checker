@@ -6,8 +6,6 @@ import WeatherDisplay from './weatherDisplay';
 import WeatherForecast from './weatherForecast';
 
 import '../../css/weatherChecker.css';
-import { dataLoaded, updateLocation, updateCurrent, updateForcast } from '../../actions';
-import testJson from '../../resources/testData.json';
 
 
 
