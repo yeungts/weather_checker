@@ -23,9 +23,7 @@ function CityFinder() {
     const handleOnSelect = (city) => {
         // the item selected
         dispatch(selectCity(city));
-        const APIUrl = `https://api.weatherapi.com/v1/forecast.json?key=bb085012a75545f5a4e45204221003&q=${city.lat},${city.lng}&days=3&aqi=yes&alerts=yes`;
-        
-        //const APIUrl = `https://api.weatherapi.com/v1/forecast.json?key=API_KEY_HERE&q=${city.lat},${city.lng}&days=3&aqi=yes&alerts=yes`;
+        const APIUrl = `https://api.weatherapi.com/v1/forecast.json?key=API_KEY_HERE&q=${city.lat},${city.lng}&days=3&aqi=yes&alerts=yes`;
         
         console.log(APIUrl);
 
