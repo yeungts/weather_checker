@@ -33,4 +33,11 @@ export const updateForcast = (value) => {
     }
 }
 
+export const updateCurrentHour = (value) => {
+    return {
+        type: 'UPDATE_CURR_HOUR',
+        payload: value
+    }
+}
+
 // other actions

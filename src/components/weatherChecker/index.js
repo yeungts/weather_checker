@@ -19,12 +19,6 @@ function WeatherChecker() {
         return (
             <div className="weather-app-container">
                 <CityFinder />
-                <button onClick={() => {
-                    dispatch(updateLocation(testJson.location));
-                    dispatch(updateCurrent(testJson.current));
-                    dispatch(updateForcast(testJson.forecast));
-                    dispatch(dataLoaded());
-                    }}>load template data</button>
             </div>
         );
     }

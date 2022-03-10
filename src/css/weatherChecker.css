@@ -15,6 +15,9 @@
 }
 
 .widget {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     row-gap: 10px;
     padding: 20px;
     border-radius: 25px;
@@ -24,8 +27,6 @@
 
 /* Current weather widgets styling --------------------------------------- */
 .current-weather {
-    display: flex;
-    flex-direction: column;
     background-color: rgba(58, 149, 190, 0.61);
 }
 
@@ -114,11 +115,9 @@
 /* Forecast widget ------------------------------------------------------- */
 
 .weather-forecast {
-    display: flex;
-    flex-direction: column;
     row-gap: 0px;
     color: #dfffff;
-    background-color: rgba(106, 34, 173, 0.315);
+    background-color: rgba(128, 17, 231, 0.473);
 }
 
 .forecast-title {
@@ -128,6 +127,7 @@
 
 .forecast-bar {
     display: flex;
+    justify-content: space-between;
     column-gap: 30px;
 }
 
@@ -159,4 +159,33 @@
 .low-high > div:first-child {
     font-size: 14px;
     color: rgb(133, 133, 133);
+}
+
+.hour-forcast {
+    display: flex;
+    column-gap: 40px;
+    margin-top: 10px;
+    text-align: center;
+    height: fit-content;
+    width: 290px;
+    overflow: auto;
+    white-space: nowrap;
+    padding-bottom: 5px;
+}
+
+.hour-forcast::-webkit-scrollbar {
+    height: 6px;
+}
+  
+.hour-forcast::-webkit-scrollbar-thumb {
+    background-color: rgba(141, 141, 233, 0.452);
+    border-radius: 20px;
+}
+  
+.hour-forcast a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
 }

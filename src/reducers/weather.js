@@ -90,3 +90,12 @@ export const forecastReducer = (state = defaultForecastState, action) => {
             return state;
     }
 };
+
+export const currentHourReducer = (state = null, action) => {
+    switch (action.type) {
+        case "UPDATE_CURR_HOUR":
+            return state = action.payload;
+        default:
+            return state;
+    }
+}

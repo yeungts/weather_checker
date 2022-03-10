@@ -1,7 +1,9 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { updateCurrentHour } from '../../actions';
+import { useDispatch, useSelector } from 'react-redux';
 
 function WeatherDisplay() {
+    const dispatch = useDispatch();
 
     // Fetch city and weather information from store
     const city = useSelector(state => state.city);
@@ -17,9 +19,10 @@ function WeatherDisplay() {
         }
     } 
 
-    let hour = () => {
+    let hourFormatted = () => {
         if (currentWeather != null) {
             let hour = parseInt(currentWeather.last_updated.split(' ')[1].split(':')[0]);
+            dispatch(updateCurrentHour(hour));
             if (hour == 0 ) {
                 return 12 + " AM";
             } else if (hour > 12) {
@@ -37,8 +40,8 @@ function WeatherDisplay() {
     return (
         <div className="current-weather widget">
             <div>
-                <div className='location-text'>{ city.name },{ returnedLocation.region }</div>
-                <div className='day-time'> { day() }, { hour() } </div>
+                <div className='location-text'>{ city.name }, { returnedLocation.region }</div>
+                <div className='day-time'> { day() }, { hourFormatted() } </div>
             </div>
             <div className='condition-group'>
                 <div className='condition-icon'><img src={ currentWeather.condition.icon } /></div>
