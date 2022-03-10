@@ -12,6 +12,16 @@ body {
   background-color: black;
 }
 
+.footer {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  left: 0;
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
