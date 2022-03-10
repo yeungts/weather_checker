@@ -9,6 +9,7 @@
 .widgets-wrapper {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     padding: 10px;
     row-gap: 20px;
     column-gap: 20px;

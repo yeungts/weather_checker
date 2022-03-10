@@ -12,6 +12,11 @@ body {
   background-color: black;
 }
 
+.city-finder {
+  width: 680px;
+  padding: 10px 0;
+}
+
 .footer {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   left: 0;
@@ -25,4 +30,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@media screen and (max-width: 680px) {
+  .city-finder {
+    width: 330px;
+  }
 }
