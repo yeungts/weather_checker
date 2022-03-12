@@ -6,6 +6,7 @@ import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 import { dataLoaded, updateLocation, updateCurrent, updateForcast } from '../../actions';
 import { selectCity } from '../../actions';
 import cities from 'cities.json';
+import APIKEY from '../../resources/APIkey.json';
 
 
 function CityFinder() {
@@ -23,8 +24,8 @@ function CityFinder() {
     const handleOnSelect = (city) => {
         // the item selected
         dispatch(selectCity(city));
-        const APIUrl = `https://api.weatherapi.com/v1/forecast.json?key=API_KEY_HERE&q=${city.lat},${city.lng}&days=3&aqi=yes&alerts=yes`;
-        
+        const APIUrl = `https://api.weatherapi.com/v1/forecast.json?key=${APIKEY.weather_api_key}&q=${city.lat},${city.lng}&days=3&aqi=yes&alerts=yes`;
+         
         console.log(APIUrl);
 
         // Fetch weather data

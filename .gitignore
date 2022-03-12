@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+/src/resources/APIkey.json
 
 # testing
 /coverage
