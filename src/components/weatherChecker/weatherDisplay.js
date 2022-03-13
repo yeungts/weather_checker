@@ -42,7 +42,7 @@ function WeatherDisplay() {
     return (
         <div className="current-weather widget">
             <div>
-                <div className='location-text'>{ city.name }, { returnedLocation.region }</div>
+                <div className='location-text'>{ city.name }{ returnedLocation.region != "" ? `, ${ returnedLocation.region }` : "" }</div>
                 <div className='day-time'> { day() }, { hourFormatted() } </div>
             </div>
             <div className='condition-group'>

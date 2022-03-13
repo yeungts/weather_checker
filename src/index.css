@@ -12,6 +12,25 @@ body {
   background-color: black;
 }
 
+#photo-banner {
+  display: flex;
+  align-items: center;
+  min-height: 40vh;
+  min-width: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: bottom center;
+  transition: 3s;
+}
+
+#photo-banner-text {
+  text-align: center;
+  margin: auto;
+  font-size: 60px;
+  color: #ffffff;
+  text-shadow: 4px 4px 3px rgba(48, 43, 43, 0.945);
+}
+
 .city-finder {
   width: 680px;
   padding: 10px 0;
@@ -35,5 +54,13 @@ code {
 @media screen and (max-width: 680px) {
   .city-finder {
     width: 330px;
+  }
+  
+  #photo-banner {
+    min-height: 20vh;
+  }
+
+  #photo-banner-text {
+    font-size: 40px;
   }
 }
