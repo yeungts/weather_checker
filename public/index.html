@@ -24,6 +24,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Weather Checker By Kendrick</title>
   </head>
   <body>
@@ -43,4 +44,17 @@
         Copyright © 2022 Kendrick Yeung
     </div>
   </body>
+  <script>
+    var index = 0;
+    var bannerImg = ["https://image-aws-us-west-2.vsco.co/bd0d01/36445316/60036e5d564f2f010601600c/vsco60036e6015975.jpg", "https://image-aws-us-west-2.vsco.co/bd0d01/36445316/61fc604250bf1300097b1a13/vsco61fc604371de6.jpg", "https://image-aws-us-west-2.vsco.co/bd0d01/36445316/5cd3c042c68fd3510394e01d/vsco5cd3c0451bd26.jpg"];
+    
+    // loop banner image
+    $(window).on('load', () => {
+      $("#photo-banner").css("background-image", "url(" + bannerImg[2] + ")");
+      setInterval(() => {
+        $("#photo-banner").css("background-image", "url(" + bannerImg[index] + ")");
+        index < (bannerImg.length - 1) ? index ++ : index = 0;
+      }, 5000);
+    })
+  </script>
 </html>
